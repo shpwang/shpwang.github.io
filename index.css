@@ -29,7 +29,7 @@ body {background-color: rgb(244, 245, 245);}
   font-weight: bolder;
   color: rgb(58, 87, 149)
 }
-table.infobox {font-size: 11px;}
+table.infobox {font-size: 11pt;}
 td.infobox-icon-td {min-width: 60px;height: 60px;}
 td.infobox-txt-td {width: 1000px;  vertical-align: top;padding-top: 6px;}
 .fakePersonalIcon {
