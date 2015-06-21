@@ -18,8 +18,8 @@
       var FakeBook = React.createClass({
       	getInitialState: function() {
 		    return {msgList: [
-		    	{author: "Pei Wang", msg: "FakeBook is so fake! <br> ReactJS is so easy."},
-        		{author: "Cloud Pat", msg: "I want to <br> Click Like!"}
+		    	{author: "Pei Wang", msg: "FakeBook is so fake! <br> ReactJS is so easy.",time:"22/6/2015 @ 0:4:4"},
+        		{author: "Cloud Pat", msg: "I want to <br> Click Like!",time:"22/6/2015 @ 0:8:4"}
 		    	]};
 	  	},
 	  	hadelOnMessageSubmit: function(data) {
@@ -43,7 +43,7 @@
       var MessageLists = React.createClass({
         render: function () {
           var msgNodes = this.props.msgdata.map(function (comment) {
-            return <Comment author={comment.author} msg={comment.msg}></Comment>
+            return <Comment author={comment.author} msg={comment.msg} time={comment.time}></Comment>
           });
           return (
             <div className='messageLists'>
@@ -69,13 +69,7 @@
 			}
 		},
       	render:function(){
-      		var currentdate = new Date(); 
-			var datetime = currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " @ "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds(); 
+      		
              var iconname = this.props.author.slice(0,1);
              var rawMarkup = converter.makeHtml(this.props.msg.toString());  
       		return(
@@ -89,7 +83,7 @@
 	      					</td>
 	      					<td className='infobox-txt-td'>
 	      						<div className="usrnames">{this.props.author}</div>
-	      						<div className="datetime">{datetime}</div>
+	      						<div className="datetime">{this.props.time}</div>
 	      					</td>
       					</tr>
       					<tr>
@@ -117,7 +111,14 @@
 		    if (!msg || !author) {
 		      return false;
 		    }
-		    this.props.onMessageSubmit({author: author, msg: msg});
+		    var currentdate = new Date(); 
+			var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds(); 
+		    this.props.onMessageSubmit({author: author, msg: msg, time:currentdate});
 		    this.refs.author.getDOMNode().value = '';
 		    this.refs.message.getDOMNode().value = '';
 		    return false;
