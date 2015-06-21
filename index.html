@@ -118,7 +118,7 @@
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds(); 
-		    this.props.onMessageSubmit({author: author, msg: msg, time:currentdate});
+		    this.props.onMessageSubmit({author: author, msg: msg, time:datetime});
 		    this.refs.author.getDOMNode().value = '';
 		    this.refs.message.getDOMNode().value = '';
 		    return false;
