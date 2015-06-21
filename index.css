@@ -1,4 +1,4 @@
-.fakebook{max-width:800px;min-width:400px;width:85%;margin: auto;  margin-top: 30px;}
+.fakebook{max-width:800px;min-width:250px;width:85%;margin: auto;  margin-top: 30px;}
 .postform-box, .comment-box{width: 98%;margin: 7px auto;border: 1px solid #f0f0f0;padding: 10px 10px 30px 10px;background-color: white;}
 .postform .thinkwhat{border-bottom: 1px solid #f0f0f0;padding:10px 0;margin: 0 0 6px 0;}
 .postform [type='submit'] {  background-color: rgb(58, 87, 149);
